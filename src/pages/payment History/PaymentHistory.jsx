@@ -2,15 +2,13 @@ import React, { use } from "react";
 import { StateDealContext } from "../Root/Root";
 
 const PaymentHistory = () => {
-  const { storeCardData, setStoreCardData } = use(StateDealContext);
-
-  const newCard = [...storeCardData, storeCardData];
-console.log(storeCardData)
+  const { storeCardData } = use(StateDealContext);
+  const newAddedCard = storeCardData;
+  const newCard = [...newAddedCard, storeCardData];
+  console.log(newCard, "new card dont show");
   return (
     <div>
       <h1>Payment History</h1>
-
-      {/* <div className="cards">{allCardData.map((e) => e.paymentType)}</div> */}
     </div>
   );
 };

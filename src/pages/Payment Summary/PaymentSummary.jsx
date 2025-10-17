@@ -2,7 +2,8 @@ import React, { use } from "react";
 import { StateDealContext } from "../Root/Root";
 import { ToastContainer, toast } from "react-toastify";
 const PaymentSummary = () => {
-  const { paymentState, paymentType } = use(StateDealContext);
+  const { paymentState, paymentType, storeCardData, setStoreCardData } =
+    use(StateDealContext);
   console.log(paymentState, "payment state");
   const notify = () =>
     toast(
@@ -47,7 +48,9 @@ const PaymentSummary = () => {
         <h1>{paymentState}</h1>
       </div>
       <button
-        onClick={notify}
+        onClick={() => {
+          notify(), setStoreCardData(paymentType, paymentState);
+        }}
         className="bg-blue-800 text-white w-full py-1 hover:bg-red-800 rounded-sm duration-300"
       >
         Pay Now

@@ -1,10 +1,11 @@
 import React from "react";
 import { BrandImage } from "../../../public/BrandLogo";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const links = (
     <div className="flex lg:flex-row flex-col items-center gap-x-4 gap-y-3 lg:gap-y-0">
-      <li>Home</li>
+      <Link to='/'>Home</Link>
       <li>Reunion</li>
       <li>Members</li>
       <li>BeaMember</li>
@@ -52,6 +53,10 @@ const Navbar = () => {
         <div className="navbar-end">
           <a className="btn bg-blue-600 text-white px-10 py-0 border-none">Login</a>
         </div>
+      </div>
+      <div className="w-full justify-end flex mt-5">
+      <Link to='/history' className="bg-sky-500 text-white px-6 hover:cursor-pointer py-1 rounded-2xl border-none">See Transaction History</Link>
+
       </div>
     </div>
   );

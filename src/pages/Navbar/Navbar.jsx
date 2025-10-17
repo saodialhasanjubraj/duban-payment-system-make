@@ -50,7 +50,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn text-yellow-400">Local Storage</a>
+          <a className="btn bg-blue-600 text-white px-10 py-0 border-none">Login</a>
         </div>
       </div>
     </div>

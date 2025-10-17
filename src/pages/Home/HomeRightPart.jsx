@@ -5,7 +5,7 @@ const HomeRightPart = () => {
   return (
     <div className=" min-w-100">
       <h1 className="mb-2 font-semibold text-2xl">Payment Methood</h1>
-      <div className="paymentMethoodCards flex flex-col gap-y-2 ">
+      <div className="paymentMethoodCards flex flex-col gap-y-4 ">
         <PaymentMethoodCard
           name={"Zelle (Scan to Pay)"}
           cardImage={"https://i.postimg.cc/L8KbCV4x/image.png"}

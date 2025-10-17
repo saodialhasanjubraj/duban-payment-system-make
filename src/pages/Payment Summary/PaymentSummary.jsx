@@ -1,10 +1,16 @@
 import React, { use } from "react";
 import { StateDealContext } from "../Root/Root";
-
+import { ToastContainer, toast } from "react-toastify";
 const PaymentSummary = () => {
   const { paymentState, paymentType } = use(StateDealContext);
   console.log(paymentState, "payment state");
-
+  const notify = () =>
+    toast(
+      "You successfully pay " +
+        paymentState +
+        "$ & your payment type: " +
+        paymentType
+    );
   return (
     <div className="bg-white py-10 px-10 flex flex-col gap-y-2 rounded-2xl">
       <h1>Payments Summary</h1>
@@ -40,9 +46,13 @@ const PaymentSummary = () => {
         <h1>Total Payable Ammount</h1>
         <h1>{paymentState}</h1>
       </div>
-      <button className="bg-blue-800 text-white w-full py-1 hover:bg-red-800 rounded-sm duration-300">
+      <button
+        onClick={notify}
+        className="bg-blue-800 text-white w-full py-1 hover:bg-red-800 rounded-sm duration-300"
+      >
         Pay Now
       </button>
+      <ToastContainer />
     </div>
   );
 };
